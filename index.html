@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Enterprise Account Dossier &amp; Claude Expansion Blueprint: Cognition AI (Devin)</title>
+<meta name="description" content="A spec enterprise account plan for Cognition AI (Devin): verified account intelligence, an interactive Claude token-economics model, three technical wedges and a front-half MEDDPICC — built from public sources only.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0D0E11">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Enterprise Account Dossier & Claude Expansion Blueprint: Cognition AI (Devin)">
+<meta property="og:description" content="Live proof-of-value dossier: verified account intel, an interactive prompt-caching margin model, and a front-half MEDDPICC — public sources only.">
+<!-- TODO after first Vercel deploy: replace with the absolute URL, e.g. https://YOUR-PROJECT.vercel.app/og.png — LinkedIn ignores relative og:image paths -->
+<meta property="og:image" content="/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">CA</div>
+      <div><div class="t">Cognition AI · Devin</div><div class="s">account dossier · spec plan · verified <span data-verified>2026-10-13</span></div></div>
+    </div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#calc">Economics</a><a href="#wedges">Wedges</a><a href="#meddpicc">MEDDPICC</a><a href="#method">Method</a>
+    </nav>
+    <div class="meta-strip" id="meta-strip" aria-label="Account metadata"></div>
+  </div>
+</header>
+
+<main>
+<!-- ───────────── HERO ───────────── -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="stamp"><span class="pulse" aria-hidden="true"></span> Public sources only · prices verified <span data-verified>2026-10-13</span> · not affiliated with Anthropic or Cognition</div>
+        <p id="greeting" hidden class="muted" style="margin-bottom:8px">Prepared for <b></b> — a worked example of the account dossiers I build.</p>
+        <div class="eyebrow">Enterprise account dossier</div>
+        <h1>Cognition AI (Devin) &amp; the <span class="accent">Claude Expansion Blueprint</span></h1>
+        <p class="lede" style="margin-top:16px">How I would run this account as Anthropic's enterprise AE. Devin already runs on Claude — Cognition said so when it <a href="https://cognition.com/blog/devin-sonnet-4-5-lessons-and-challenges" target="_blank" rel="noopener noreferrer">rebuilt Devin for Sonnet 4.5</a>. So the play is not migration; it is <strong>consumption depth and defence</strong>: deeper prompt caching, a procurement route through the AWS relationship Cognition just signed, and a credible answer to the in-house SWE-1.5 / SWE-2 models that compete for the same tokens.</p>
+        <div class="signals" id="signals" aria-label="Signal badges"></div>
+        <blockquote class="thesis">Thesis: at Devin's scale, the cache-read line is the margin. Every point of cacheable-prefix share is worth more than any list-price discount, and it is the one lever Cognition's own models cannot copy without rebuilding Claude.</blockquote>
+      </div>
+      <div class="facts" id="facts" aria-label="Company facts"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── CALCULATOR ───────────── -->
+<section id="calc">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">01 · Token economics</div>
+      <h2>Current vs. optimised Claude spend — and what it does to gross margin per ACU</h2>
+      <p class="muted">Model: current Sonnet tier at $2 / $10 per MTok with 5% cache reads, verified from Anthropic's pricing page. Three presets, two headline sliders, everything else under <em>Advanced</em>. The URL updates as you move sliders, so any scenario is shareable.</p>
+    </div>
+
+    <div class="calc-grid">
+      <div class="card pad-lg">
+        <div class="presets" role="group" aria-label="Scenario presets">
+          <button data-preset="conservative" aria-pressed="false">Conservative</button>
+          <button data-preset="expected" aria-pressed="true">Expected</button>
+          <button data-preset="aggressive" aria-pressed="false">Aggressive</button>
+        </div>
+        <p class="hint dim" id="preset-blurb" style="font-size:.8rem;margin:-10px 0 18px"></p>
+
+        <div class="ctl">
+          <div class="row"><label for="sl-R">Agent loops per month</label><span class="val" id="v-R">2M</span></div>
+          <input type="range" id="sl-R" min="0" max="1000" step="1" value="500" aria-valuemin="100000" aria-valuemax="10000000">
+          <div class="hint">One loop = one model turn inside a Devin session. Log scale, 100K → 10M.</div>
+        </div>
+        <div class="ctl">
+          <div class="row"><label for="sl-C">Context ingested per loop</label><span class="val" id="v-C">60K tok</span></div>
+          <input type="range" id="sl-C" min="10000" max="150000" step="1000" value="60000">
+          <div class="hint">Repo map, file slices, tool definitions, history. Cognition caps Devin at 200K to avoid "context anxiety".</div>
+        </div>
+
+        <details class="adv">
+          <summary>Advanced assumptions</summary>
+          <div class="adv-grid">
+            <div class="ctl"><div class="row"><label for="sl-h">Cacheable share of context</label><span class="val" id="v-h">90%</span></div><input type="range" id="sl-h" min="0" max="95" step="1" value="90"></div>
+            <div class="ctl"><div class="row"><label for="sl-T">Turns per session</label><span class="val" id="v-T">40</span></div><input type="range" id="sl-T" min="2" max="200" step="1" value="40"></div>
+            <div class="ctl"><div class="row"><label for="sl-O">Visible output / loop</label><span class="val" id="v-O">1.5K</span></div><input type="range" id="sl-O" min="200" max="8000" step="100" value="1500"></div>
+            <div class="ctl"><div class="row"><label for="sl-E">Thinking budget / loop</label><span class="val" id="v-E">2K</span></div><input type="range" id="sl-E" min="0" max="16000" step="250" value="2000"></div>
+            <div class="ctl"><div class="row"><label for="sl-b">Batch-eligible share</label><span class="val" id="v-b">10%</span></div><input type="range" id="sl-b" min="0" max="100" step="5" value="10"></div>
+            <div class="ctl"><div class="row"><label for="sl-L">Loops per ACU</label><span class="val" id="v-L">15</span></div><input type="range" id="sl-L" min="5" max="120" step="5" value="15"></div>
+            <div class="full" style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span style="font-size:.8rem;font-weight:600">Cache TTL</span>
+              <div class="seg" id="ttl" role="group" aria-label="Cache TTL"><button data-ttl="5m" aria-pressed="false">5-min · 1.25× write</button><button data-ttl="1h" aria-pressed="true">1-hour · 2× write</button></div>
+            </div>
+          </div>
+          <p class="note" style="margin-top:14px">Batch (50% off) is only applied to the batch-eligible share — evals, re-indexing, nightly review — because batch jobs are asynchronous. Interactive agent loops stay on the standard tier. Thinking tokens are billed as output.</p>
+        </details>
+      </div>
+
+      <div>
+        <div class="kpis" aria-live="polite">
+          <div class="kpi hero-kpi" id="k-savings"><div class="k">Monthly savings</div><div class="v good">—</div><div class="s"></div></div>
+          <div class="kpi" id="k-pct"><div class="k">Spend reduction</div><div class="v">—</div><div class="s"></div></div>
+          <div class="kpi" id="k-gm"><div class="k">Gross-margin recovery</div><div class="v">—</div><div class="s"></div></div>
+          <div class="kpi" id="k-cpk" style="grid-column: span 2"><div class="k">Optimised cost per 1K loops</div><div class="v">—</div><div class="s"></div></div>
+          <div class="kpi" style="grid-column: span 2"><div class="k">Implied ACU revenue</div><div class="v num" id="rev">—</div><div class="s">loops ÷ loops-per-ACU × $2.25 per ACU (Devin 2.0 launch price; edit in Advanced)</div></div>
+        </div>
+        <p class="sr-only" id="live"></p>
+
+        <div class="card chart-card">
+          <h3>Where the dollars go <small>uncached input · cache writes · cache reads · output · thinking</small></h3>
+          <div class="bars">
+            <div class="bar-row"><div class="lbl">Current</div><div class="bar" id="bar-cur"></div><div class="amt" id="bar-cur-amt">—</div></div>
+            <div class="bar-row"><div class="lbl">Optimised</div><div class="bar" id="bar-opt"></div><div class="amt" id="bar-opt-amt">—</div></div>
+          </div>
+          <div class="legend"><span><i style="background:#7C8594"></i>Uncached input</span><span><i style="background:#F59E0B"></i>Cache writes</span><span><i style="background:#3F8F66"></i>Cache reads</span><span><i style="background:#D97757"></i>Output</span><span><i style="background:#B45309"></i>Thinking</span></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px">
+            <div class="chip" style="display:block"><span class="k">Breakeven vs. current</span><div class="num" style="font-weight:600;margin-top:2px" id="be">—</div></div>
+            <div class="chip" style="display:block"><span class="k">Cache pays back on turn</span><div class="num" style="font-weight:600;margin-top:2px"><span id="payback">2</span> of each session</div></div>
+          </div>
+        </div>
+
+        <div class="card chart-card">
+          <h3>What moves the number <small>one-at-a-time sensitivity around the optimised scenario</small></h3>
+          <div class="tornado" id="tornado"></div>
+          <p class="note">Green = cheaper than the optimised baseline, coral = more expensive. If cache-hit share is on top, the conversation is about prompt architecture, not list price.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">Build vs. buy — the real competitor is internal</h3>
+    <p class="muted" style="max-width:76ch">Cognition trained SWE-grep and SWE-1.5 on GB200s and serves them on Cerebras at 950 tok/s. Anthropic's defence is not "Claude is smarter"; it is a per-loop cost that a hybrid stack can match while keeping Claude on the long-horizon reasoning.</p>
+    <div class="bvb">
+      <div class="card"><h4><span class="badge coral">Claude only</span> optimised Sonnet</h4><div class="num" style="font-size:1.6rem;font-weight:700" id="bvb-claude">—</div><ul><li>per loop at the optimised scenario above</li><li>single vendor, one prompt stack, 4 cache breakpoints</li></ul></div>
+      <div class="card"><h4><span class="badge ok">Hybrid</span> Haiku 5.5 retrieval + Sonnet</h4><div class="num" style="font-size:1.6rem;font-weight:700" id="bvb-hybrid">—</div><ul><li>Haiku-class sub-agent ($0.10 / $0.50) does the SWE-grep job; main context shrinks 40%</li><li>saves <b class="num" id="bvb-hybrid-save">—</b>/mo vs. Claude-only</li></ul></div>
+      <div class="card"><h4><span class="badge amber">In-house</span> SWE-1.5 / SWE-2 on Cerebras</h4><div class="num" style="font-size:1.6rem;font-weight:700" id="bvb-inhouse">—</div><ul><li><em>placeholder</em> — no public serving-cost figure exists; the gap to discover is <b class="num" id="bvb-gap">—</b>/mo</li><li>Cognition itself positions these as complementary, not replacements</li></ul></div>
+    </div>
+    <p class="note warn">Volumes are scenario anchors, not Cognition disclosures. Revenue per loop derives from the public $2.25/ACU launch price and an editable loops-per-ACU assumption. The in-house serving cost is a stated placeholder. The point of the model is the <em>shape</em> of the economics and the questions it generates — see MEDDPICC.</p>
+  </div>
+</section>
+
+<!-- ───────────── WEDGES ───────────── -->
+<section id="wedges">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">02 · Technical wedges</div>
+      <h2>Three hypotheses I would bring to the first technical call</h2>
+      <p class="muted">Written as hypotheses to validate with Cognition's team, not as a lecture. Each ends with what I would want to check.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Wedges">
+      <button role="tab" data-panel="w1" aria-selected="true"><span class="n">W1</span>Extended thinking for agent autonomy</button>
+      <button role="tab" data-panel="w2" aria-selected="false"><span class="n">W2</span>Prompt-caching mechanics</button>
+      <button role="tab" data-panel="w3" aria-selected="false"><span class="n">W3</span>AWS procurement route</button>
+    </div>
+
+    <button class="acc-head" data-panel="w1" aria-expanded="false"><span><span class="n">W1</span>Extended thinking for agent autonomy</span><span class="chev">⌄</span></button>
+    <div class="panel" id="w1" data-title="W1 — Extended thinking for agent autonomy" role="tabpanel">
+      <div class="wedge">
+        <div>
+          <h3>One deliberate pass beats N sampled ones</h3>
+          <p class="muted">Agent harnesses historically bought reliability with self-consistency: sample a plan 3–5 times, vote, re-read the repo each time. Extended thinking moves that deliberation inside a single turn, with a budget the harness controls. The context is read once; the thinking tokens are billed as output.</p>
+          <div class="hyp"><b>Hypothesis</b>Devin's planning stage can replace multi-sample voting with a tuned thinking budget per task class, cutting context re-reads while keeping the +18% planning lift Cognition measured on Sonnet 4.5.</div>
+          <p class="muted">Napkin math at 60K context: 3 samples re-read 180K input tokens; one pass with an 8K thinking budget reads 60K and writes 8K. At $2 / $10 that is roughly <span class="num">$0.36</span> vs <span class="num">$0.20</span> per planning step before caching — and with 90% cache reads the single-pass figure drops further because the one read is mostly cached.</p>
+          <ul class="validate">
+            <li>Which task classes still use multi-sample planning, and what is their share of loops?</li>
+            <li>Is the thinking budget fixed or adaptive — and does it correlate with Junior Developer Eval difficulty?</li>
+            <li>Does the 200K cap stay necessary once thinking replaces re-reads?</li>
+          </ul>
+          <p class="src">Sources: <a href="https://cognition.com/blog/devin-sonnet-4-5-lessons-and-challenges" target="_blank" rel="noopener noreferrer">Cognition on Sonnet 4.5 (+18% planning, +12% JDE)</a> · <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" target="_blank" rel="noopener noreferrer">thinking tokens billed as output</a></p>
+        </div>
+        <div>
+          <div class="table-wrap">
+            <table class="data"><caption class="sr-only">SWE-bench Verified leaderboard excerpt</caption>
+              <thead><tr><th>Model (SWE-bench Verified)</th><th class="num">Resolved</th><th>Date</th></tr></thead>
+              <tbody id="swe-rows"></tbody>
+            </table>
+          </div>
+          <p class="note">Leaderboard excerpt from swebench.com, fetched <span data-verified>2026-10-13</span>. Cognition stopped reporting SWE-bench in 2024 and runs its own Junior Developer Evals — so this table frames the market, not Devin.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="acc-head" data-panel="w2" aria-expanded="false"><span><span class="n">W2</span>Prompt-caching mechanics</span><span class="chev">⌄</span></button>
+    <div class="panel" id="w2" data-title="W2 — Prompt-caching mechanics" role="tabpanel">
+      <div class="wedge">
+        <div>
+          <h3>Devin's prompt stack maps onto four cache breakpoints</h3>
+          <p class="muted">Caching rewards stable prefixes. A coding agent's prompt is unusually prefix-stable: system instructions and tool schemas never change inside a session; the repo map and DeepWiki-style summaries change rarely; only the latest turn is new. Anthropic allows up to 4 explicit breakpoints with a 20-block lookback, 512-token minimum on the current models, and a TTL that refreshes on every read.</p>
+          <div class="hyp"><b>Hypothesis</b>Devin's codebase index (Devin Wiki / repo map) and tool definitions can sit behind breakpoints 1–2 and reach a 90%+ hit rate on multi-turn sessions; the 1-hour TTL pays for itself on any session with gaps longer than five minutes between turns (human review, CI waits).</div>
+          <ul class="validate">
+            <li>Where does session state currently live — in the prompt (cacheable) or re-fetched per turn (not)?</li>
+            <li>Typical gap between turns while Devin waits on CI or a human: under or over five minutes?</li>
+            <li>Does parallel-Devin fan-out share a prefix, so one write serves many readers?</li>
+          </ul>
+          <p class="src">Sources: <a href="https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching" target="_blank" rel="noopener noreferrer">prompt caching docs</a> · <a href="https://cognition.com/blog/devin-2" target="_blank" rel="noopener noreferrer">Devin 2.0: Devin Wiki, Devin Search, parallel Devins</a></p>
+        </div>
+        <div class="card">
+          <svg class="diagram" viewBox="0 0 560 330" role="img" aria-label="Diagram of a Devin prompt stack with four cache breakpoints">
+            <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9BA1A6"/></marker></defs>
+            <g font-size="12" fill="#ECEDEE">
+              <rect x="20" y="20" width="360" height="48" rx="8" fill="#1E2128" stroke="#2A2E37"/><text x="34" y="40" font-weight="700">System prompt + tool schemas</text><text x="34" y="58" fill="#9BA1A6">never changes in a session · ~6K tok</text>
+              <rect x="20" y="86" width="360" height="48" rx="8" fill="#1E2128" stroke="#2A2E37"/><text x="34" y="106" font-weight="700">Repo map · Devin Wiki summaries · AST index</text><text x="34" y="124" fill="#9BA1A6">changes on checkout / re-index · ~30K tok</text>
+              <rect x="20" y="152" width="360" height="48" rx="8" fill="#1E2128" stroke="#2A2E37"/><text x="34" y="172" font-weight="700">Task brief + plan + accumulated history</text><text x="34" y="190" fill="#9BA1A6">append-only inside a session · ~20K tok</text>
+              <rect x="20" y="218" width="360" height="48" rx="8" fill="#2A2420" stroke="#D97757"/><text x="34" y="238" font-weight="700" fill="#D97757">Latest tool result + new instruction</text><text x="34" y="256" fill="#9BA1A6">fresh every turn · ~4K tok · never cached</text>
+              <g font-family="JetBrains Mono, monospace" font-size="11">
+                <line x1="400" y1="68" x2="400" y2="68" stroke="#F59E0B"/><text x="400" y="72" fill="#F59E0B">▸ BP1 · write once / session</text>
+                <text x="400" y="138" fill="#F59E0B">▸ BP2 · re-write on re-index</text>
+                <text x="400" y="204" fill="#F59E0B">▸ BP3 · moves each turn</text>
+                <text x="400" y="270" fill="#9BA1A6">  (BP4 spare)</text>
+              </g>
+              <line x1="200" y1="266" x2="200" y2="296" stroke="#9BA1A6" marker-end="url(#arr)"/>
+              <text x="20" y="318" fill="#9BA1A6" font-size="11">Read price on the cached 56K: 5% of input · write 1.25× (5-min) or 2× (1-h) · TTL refreshes on every hit</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <button class="acc-head" data-panel="w3" aria-expanded="false"><span><span class="n">W3</span>AWS procurement route</span><span class="chev">⌄</span></button>
+    <div class="panel" id="w3" data-title="W3 — AWS procurement route" role="tabpanel">
+      <div class="wedge">
+        <div>
+          <h3>Buy Claude where Cognition already sells Devin</h3>
+          <p class="muted">Cognition's production environment is AWS (its own security docs say so), it signed a multi-year Strategic Collaboration Agreement with AWS in September 2026, and Devin is sold on AWS Marketplace. Bedrock has price parity with Anthropic direct — Sonnet 5.5 at $2 / $10, cache reads at $0.10 after the October 7 cut — so routing a Claude commit through the AWS relationship costs nothing on list price and can remove a vendor security cycle.</p>
+          <div class="hyp"><b>Hypothesis</b>A Marketplace private offer for Claude (Bedrock or Claude Platform on AWS, billed in CCUs) would count toward Cognition's AWS commitment and reuse the SOC 2 / ZDR paperwork already on file — collapsing procurement from a new-vendor review to an addendum. Whether an EDP exists, and whether this drawdown applies, is exactly what discovery must confirm.</div>
+          <ul class="validate">
+            <li>Direct Anthropic API, Bedrock, or both today — and which one carries the volume?</li>
+            <li>Is there an AWS commitment the SCA sits under, and does Marketplace spend count toward it?</li>
+            <li>Batch on Bedrock is N/A for the 5.5-generation models: does any batch-eligible workload need to stay direct?</li>
+          </ul>
+          <p class="src">Sources: <a href="https://press.aboutamazon.com/aws/2026/9/cognition-and-aws-sign-multi-year-collaboration-agreement" target="_blank" rel="noopener noreferrer">AWS–Cognition SCA (2026-09-15)</a> · <a href="https://docs.devin.ai/admin/security" target="_blank" rel="noopener noreferrer">Devin security docs</a> · <a href="https://aws.amazon.com/bedrock/pricing/" target="_blank" rel="noopener noreferrer">Bedrock pricing</a></p>
+        </div>
+        <div class="swim" aria-label="Procurement swimlane">
+          <div class="step"><div class="i">1</div><div><b>Existing AWS relationship</b><span>Production on AWS · multi-year SCA · single-tenant VPC per enterprise customer</span></div></div>
+          <div class="step"><div class="i">2</div><div><b>Marketplace private offer</b><span>Claude via Bedrock or Claude Platform on AWS · negotiated discount applied before CCU conversion</span></div></div>
+          <div class="step"><div class="i">3</div><div><b>Security already on file</b><span>SOC 2 Type II since Sep 2024 · ZDR with model providers · audit-log APIs</span></div></div>
+          <div class="step"><div class="i">4</div><div><b>Commit drawdown (to confirm)</b><span>Marketplace spend counts toward an AWS commitment if one exists — the discovery question, not an assumption</span></div></div>
+          <div class="step"><div class="i">5</div><div><b>Hybrid routing stays possible</b><span>Direct API for batch-eligible workloads; Bedrock for the interactive loop inside the customer's region</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────── MEDDPICC ───────────── -->
+<section id="meddpicc">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">03 · Front-half MEDDPICC</div>
+      <h2>What I know, what I think, and what only discovery can answer</h2>
+      <p class="muted">Highlighted cards are the front-half pillars an AE must own before a first meeting: Metrics, Economic Buyer, Decision Criteria, Identify Pain, Champion. Every claim links to its source.</p>
+    </div>
+    <div class="legend-row"><span class="badge ok"><span class="dot"></span>Validated — primary public source</span><span class="badge hyp"><span class="dot"></span>Hypothesised — inferred from signals</span><span class="badge unk"><span class="dot"></span>Unknown — discovery only</span></div>
+    <div class="pillars" id="pillars"></div>
+  </div>
+</section>
+
+<!-- ───────────── METHOD ───────────── -->
+<section id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">04 · How this dossier was built</div>
+      <h2>The method is the product. Cognition is the worked example.</h2>
+      <p class="muted">This page took one working session with an AI-native research pipeline. The same pipeline produces a dossier like this for any account on a target list — swap one content file, re-verify, ship.</p>
+    </div>
+    <div class="steps">
+      <div class="step-card"><h3>Ground truth first</h3><p>Live-fetch vendor pricing pages, the account's blog, careers board, security docs and press. Every number carries a URL and a fetch date.</p></div>
+      <div class="step-card"><h3>Network evidence</h3><p>Public DNS over HTTPS plus ARIN RDAP to confirm the production cloud and SaaS stack — no scanning, no login, nothing non-public.</p></div>
+      <div class="step-card"><h3>Evidence ledger → badges</h3><p>Each claim is graded Validated / Hypothesised / Unknown. The MEDDPICC badges are generated from the ledger, not from opinion.</p></div>
+      <div class="step-card"><h3>Economics with unit tests</h3><p>The calculator is a pure-function module with golden tests, including the hand-computed scenario and overflow checks at 10M loops × 150K tokens.</p></div>
+    </div>
+    <div class="ledger-sum" id="ledger-sum"></div>
+    <h3 style="margin-top:32px">Sources</h3>
+    <ol class="sources" id="sources"></ol>
+  </div>
+</section>
+</main>
+
+<div class="actionbar" role="toolbar" aria-label="Actions">
+  <div class="wrap">
+    <button class="btn primary" id="b-snippet"><span class="ic">✉</span> Copy outbound snippet</button>
+    <button class="btn" id="b-link"><span class="ic">⛓</span> Copy scenario link</button>
+    <button class="btn" id="b-print"><span class="ic">⤓</span> Export PDF</button>
+    <a class="btn" id="b-book" href="#" target="_blank" rel="noopener noreferrer"><span class="ic">◷</span> Book 15 min</a>
+    <span class="spacer"></span>
+    <span class="who">by <span data-author>Johnny</span> · Outbound Systems Architect</span>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><strong>Disclosure.</strong> This is a speculative account plan written as a portfolio piece by <span data-author>Johnny</span>. It is not affiliated with, endorsed by, or produced for Anthropic or Cognition AI. All facts come from the public sources listed above and were verified on <span data-verified>2026-10-13</span>; all calculations are illustrative estimates driven by editable assumptions, not disclosures by either company. Trademarks belong to their owners.</p>
+    <div class="row"><span>Prices verified <span data-verified>2026-10-13</span></span><span>·</span><span>Static site, no tracking in this version</span><span>·</span><a href="#top">Back to top</a></div>
+  </div>
+</footer>
+
+<script src="pricing.config.js"></script>
+<script src="calc.js"></script>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
