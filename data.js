@@ -24,8 +24,8 @@ window.DOSSIER = (function () {
   const author = {
     name: 'Johnny Scott',
     title: 'Outbound Systems Architect',
-    linkedin: 'https://www.linkedin.com/',   // TODO: fill with real profile URL
-    email: 'johnny@baylitx.com',             // public on GitHub profile; mailto fallback if no booking link
+    linkedin: 'https://www.linkedin.com/in/johnny-b-scott/',
+    email: 'jorgenllc@gmail.com',            // mailto fallback if no booking link
     booking: 'https://scheduler.zoom.us/johnny-jorgensen-97b7lz/johnny-scott-outbound-systems-pipeline-discussion', // "Book 15 min" → Zoom Scheduler
   };
 

@@ -19,17 +19,22 @@ front-half MEDDPICC matrix, and a "how this was built" method section. Public so
 | `build.js` | Optional: `node build.js` inlines everything into `dist/index.html` (single file). |
 | `og.png` | Social preview image used by the Open Graph tags. |
 
-## Before you publish — two fields to fill in `data.js`
+## Author block (`data.js`)
 
 ```js
 const author = {
-  name: 'Johnny',
+  name: 'Johnny Scott',
   title: 'Outbound Systems Architect',
-  linkedin: 'https://www.linkedin.com/in/YOUR-HANDLE',   // ← fill in (used in the footer / fallback)
-  email: 'johnny@baylitx.com',                           // ← mailto fallback for "Book 15 min"
-  booking: 'https://scheduler.zoom.us/...',              // ← "Book 15 min" opens this Zoom Scheduler link
+  linkedin: 'https://www.linkedin.com/in/johnny-b-scott/',
+  email: 'jorgenllc@gmail.com',                          // mailto fallback for "Book 15 min"
+  booking: 'https://scheduler.zoom.us/...',              // "Book 15 min" opens this Zoom Scheduler link
 };
 ```
+
+## After the first deploy — confirm the preview-image URL
+
+`index.html` sets `og:image` to `https://cognition-devin-dossier.vercel.app/og.png`. If Vercel gives the
+project a different URL, change that one line to match, otherwise LinkedIn won't show the preview card.
 
 ## Deploy on Vercel (click-by-click)
 
