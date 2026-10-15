@@ -146,7 +146,6 @@
   function renderStatic() {
     const A = D.account;
     $('#signals').innerHTML = D.signals.map(s => `<a class="badge ${s.status}" href="${esc(s.url)}" target="_blank" rel="noopener noreferrer" title="Source · ${esc(s.date)}"><span class="dot"></span>${esc(s.label)}</a>`).join('');
-    $('#meta-strip').innerHTML = [['HQ', A.hq], ['Cloud', 'AWS'], ['Model', 'Claude'], ['Stage', A.stage]].map(([k, v]) => `<span class="chip"><span class="k">${k}</span>${esc(v)}</span>`).join('');
     $('#facts').innerHTML = [
       ['Headquarters', A.hq, 'founded ' + A.founded], ['Latest round', A.stage, A.valuation], ['Headcount', A.headcount, A.headcountNote], ['Revenue', A.arr, A.arrNote],
       ['Production cloud', A.cloud, 'security docs + AWS SCA'], ['Agent model', 'Claude', 'Sonnet 3.6 at GA → Sonnet 4.5 rebuild'],
